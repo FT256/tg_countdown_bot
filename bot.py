@@ -1,12 +1,8 @@
 import config
-import filters
-import logging
-import utils
 
 from time import time
 import aiogram
 from aiogram import Bot, Dispatcher, executor, types
-from filters import IsAdminFilter
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

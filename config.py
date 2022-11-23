@@ -1,9 +1,11 @@
 token = ""
 
+restriction_time = 1 #minutes
+
 chat_id=[
 
 ]
 
-channel_whitelist=[
+users=[
 
 ]

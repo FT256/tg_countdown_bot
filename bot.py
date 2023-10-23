@@ -27,12 +27,13 @@ async def send_welcome(message: types.Message):
 
 
 @dp.message_handler(content_types=["any"])
-async def give_automute(message: types.Message):
+async def give_autokick(message: types.Message):
     if message.from_user.id in config.users:
-        await message.bot.restrict_chat_member(message.chat.id,
-                                           message.reply_to_message.from_user.id,
-                                           types.ChatPermissions(),
-                                           until_date=int(time()) + config.restriction_time * 60
+        await message.bot.ban_chat_member(message.chat.id,
+                                           message.reply_to_message.from_user.id
+                                           )
+        await message.bot.unban_chat_member(message.chat.id,
+                                           message.reply_to_message.from_user.id
                                            )
 
 if __name__ == '__main__':
